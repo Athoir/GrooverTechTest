@@ -1,6 +1,5 @@
 # GrooverTechTest
 
-
 ## Questions
 
 ### Scalability
@@ -13,3 +12,7 @@
 
 ### Security
 A basic solution would be to implement a maximal number of request on the target endpoint per sender. In the case of a login it could be as simple as only accepting 3 tries per our for each usernames. To add to the login situation (or any user filled form) a captcha can also be used to mitigate the automation of the attack.
+
+## Design choices
+
+Idealy the .tfvars files should not be stored in git as they are susceptible to contain sensitive data. Whether they have to be store entirely in a secret manager (like vault for exemple) or templated with variables from a secured source will depend on your existing infrastructure and needs.
