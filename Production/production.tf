@@ -3,8 +3,8 @@
 # Setup provider credentials
 provider "aws" {
   region     = "eu-west-1"
-  access_key = "my-access-key"
-  secret_key = "my-secret-key"
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
 
 # Create ECS cluster
@@ -13,6 +13,7 @@ resource "aws_ecs_cluster" "production" {
   name = "production"
 
   setting {
+    # additionnal cluster settings would be here
     name  = "containerInsights"
     value = "enabled"
   }
